@@ -19,16 +19,25 @@ public class Test : MonoBehaviour
     private void Awake()
     {
         print("Awaka");
+  
     }
 
     void Start()
     {
-        print("start");   
+        print("start");
+
+        Test3 test3 = GetComponent("Test3") as Test3;
+        TankBScript tankBScript=GameObject.FindObjectOfType<TankBScript>();
+        tankBScript.enabled = false;
+        test3.Call();
+     
+        
     }
 
     private void FixedUpdate()
     {
         print("FixedUpdate");
+     
     }
     void Update()
     {
