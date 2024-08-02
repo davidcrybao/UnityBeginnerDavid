@@ -61,9 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\1-8\MoveTest2.cs" />
+    <Compile Include="Assets\TankMovement.cs" />
     <Compile Include="Assets\Scripts\1-8\TowerManager.cs" />
     <Compile Include="Assets\Scripts\1-8\TankShooterRotate.cs" />
     <Compile Include="Assets\Scripts\1-8\TankBScript.cs" />
+    <Compile Include="Assets\Scripts\CreatObject.cs" />
     <Compile Include="Assets\Scripts\1-8\Test.cs" />
     <Compile Include="Assets\Scripts\1-8\TankRotateBase.cs" />
     <Compile Include="Assets\Scripts\1-8\Test3.cs" />
