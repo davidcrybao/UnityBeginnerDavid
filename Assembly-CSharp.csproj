@@ -64,6 +64,7 @@
     <Compile Include="Assets\TankMovement.cs" />
     <Compile Include="Assets\Scripts\1-8\TowerManager.cs" />
     <Compile Include="Assets\Scripts\1-8\TankShooterRotate.cs" />
+    <Compile Include="Assets\Scripts\Lesson51.cs" />
     <Compile Include="Assets\Scripts\1-8\TankBScript.cs" />
     <Compile Include="Assets\Scripts\CreatObject.cs" />
     <Compile Include="Assets\Scripts\1-8\Test.cs" />
