@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lesson51 : MonoBehaviour
+public class Lesson51Camera¡∑œ∞ : MonoBehaviour
 {
     [SerializeField] private Transform test;
     // Start is called before the first frame update
@@ -10,7 +10,10 @@ public class Lesson51 : MonoBehaviour
     {
         
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {

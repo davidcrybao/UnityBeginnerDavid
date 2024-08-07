@@ -11,7 +11,7 @@ public class Test4 : MonoBehaviour
     [SerializeField] private int destroyDelay;
 
     [SerializeField] private bool activeStatus;
-    [SerializeField] private string name;
+    [SerializeField] private string name2;
     private GameObject tankobj;
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class Test4 : MonoBehaviour
 
     private void ChangeName()
     {
-        tank.name = name;
+        tank.name = name2;
     }
 
     [ContextMenu("ChangeStatus")]
