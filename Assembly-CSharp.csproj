@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUILabel.cs" />
     <Compile Include="Assets\Scripts\TankBase.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Base\CustomGUIPos.cs" />
+    <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\RankPanelControl.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\TankMovement.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\TankBScript.cs" />

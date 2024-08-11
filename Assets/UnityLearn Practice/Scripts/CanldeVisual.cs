@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanldeVisual : MonoBehaviour
 {
-    [SerializeField] private Light light;
+    [SerializeField] private Light lightObject;
     [SerializeField] private Transform dayNightLight;
     private float number;
     private float dayNightNumber;
@@ -18,11 +18,11 @@ public class CanldeVisual : MonoBehaviour
     void Update()
     {
        
-        if (light.intensity>2)
+        if (lightObject.intensity>2)
         {
             number = -number;
         }
-        else if (light.intensity<0.5)
+        else if (lightObject.intensity<0.5)
         {
             number = -number;
         }
@@ -36,7 +36,7 @@ public class CanldeVisual : MonoBehaviour
             dayNightNumber = -dayNightNumber;
         }
 
-        light.intensity += number * Time.deltaTime;        // 添加 Time.deltaTime 使其每帧更新
+        lightObject.intensity += number * Time.deltaTime;        // 添加 Time.deltaTime 使其每帧更新
         dayNightLight.Rotate(Vector3.right, Time.deltaTime * dayNightNumber);
     }
 }

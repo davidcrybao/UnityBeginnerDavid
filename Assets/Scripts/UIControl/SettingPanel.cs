@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,32 +18,52 @@ public class SettingPanel : BasePanel<SettingPanel>
     }
     private void Start()
     {
-        HideOrShow(false);
+      
         quitButton.clickEvent += QuitButton_clickEvent;
         musicToggle.changeValue += MusicToggle_changeValue;
         musicEffectsToggle.changeValue+=MusicEffectsToggle_changeValue;
         musicValue.changeValue += MusicValue_changeValue;
         musicEffectsValue.changeValue += MusicEffectsValue_changeValue;
+        HideOrShow(false);
+        UpdatePanelInfo();
     }
 
     private void MusicEffectsValue_changeValue(float arg0)
     {
-        throw new System.NotImplementedException();
+        GameDataManager.Instance.ChangeSoundEffectsValue(arg0);
     }
 
     private void MusicValue_changeValue(float arg0)
     {
-        throw new System.NotImplementedException();
+        GameDataManager.Instance.ChangeBGMValue(arg0);
     }
 
     private void MusicEffectsToggle_changeValue(bool arg0)
     {
-        throw new System.NotImplementedException();
+        GameDataManager.Instance.OpenOrCloseSoundEffects(arg0);
     }
 
     private void MusicToggle_changeValue(bool arg0)
     {
-        throw new System.NotImplementedException();
+        GameDataManager.Instance.OpenOrCloseMusic(arg0);
+    }
+
+    public override void HideOrShow(bool status)
+    {
+        base.HideOrShow(status);
+        if (status==true)
+        {
+            UpdatePanelInfo();
+        }
+    }
+
+    private void UpdatePanelInfo()
+    {
+        SettingData settingData = GameDataManager.Instance.GetSettingData();
+        musicToggle.isSel=settingData.isBGMOpen;
+        musicEffectsToggle.isSel = settingData.isSMusicEffectsOpen;
+        musicValue.nowValue = settingData.musicValue;
+        musicEffectsValue.nowValue = settingData.MusicEffectsValue;
     }
 
     private void QuitButton_clickEvent()

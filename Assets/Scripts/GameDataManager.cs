@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 /// <summary>
@@ -24,10 +26,10 @@ public class GameDataManager
         if (!settingData.hasLoadedBefore)
         {
             settingData.hasLoadedBefore = true;
-            settingData.soundEffectsValue = 1f;
+            settingData.MusicEffectsValue = 1f;
             settingData.musicValue = 1f;
             settingData.isBGMOpen = true;
-            settingData.isSoundEffectsOpen = true;
+            settingData.isSMusicEffectsOpen = true;
         }
 
         rankData = PlayerPrefsDataMgr.Instance.LoadData(typeof(PlayerRankData), "Rank") as PlayerRankData;
@@ -54,13 +56,14 @@ public class GameDataManager
     public void OpenOrCloseMusic(bool isOpen)
     {
         settingData.isBGMOpen = isOpen;
+        AudioController.Instance.OpenMusic(isOpen);
         //存储改变后的数据
         PlayerPrefsDataMgr.Instance.SaveData(settingData, "Music");
     }
 
     public void OpenOrCloseSoundEffects(bool isOpen)
     {
-        settingData.isSoundEffectsOpen = isOpen;
+        settingData.isSMusicEffectsOpen = isOpen;
         //存储改变后的数据
         PlayerPrefsDataMgr.Instance.SaveData(settingData, "Music");
     }
@@ -68,17 +71,23 @@ public class GameDataManager
     public void ChangeBGMValue(float value)
     {
         settingData.musicValue = value;
+        AudioController.Instance.ChangeValue(value);
         //存储改变后的数据
         PlayerPrefsDataMgr.Instance.SaveData(settingData, "Music");
     }
 
     public void ChangeSoundEffectsValue(float value)
     {
-        settingData.soundEffectsValue = value;
+        settingData.MusicEffectsValue = value;
         //存储改变后的数据
         PlayerPrefsDataMgr.Instance.SaveData(settingData, "Music");
     }
 
     public List<PlayerData> GetPlayerData()
     { return rankData.playerDataList; }
+
+    internal SettingData GetSettingData()
+    {
+        return settingData;
+    }
 }
