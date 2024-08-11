@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerData
 {
     public string name;
-    public int time;
+    public float time;
     public int score;
 
     public PlayerData()
     { }
 
-    public PlayerData(string name, int time, int score)
+    public PlayerData(string name, float time, int score)
     {
         this.name = name;
         this.time = time;
@@ -21,5 +21,5 @@ public class PlayerData
 
 public class PlayerRankData
 {
-    public List<PlayerData> playerDataDictionary;
+    public List<PlayerData> playerDataList;
 }

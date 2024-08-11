@@ -28,12 +28,27 @@ public class GameDataManager
             settingData.musicValue = 1f;
             settingData.isBGMOpen = true;
             settingData.isSoundEffectsOpen = true;
-           
         }
 
         rankData = PlayerPrefsDataMgr.Instance.LoadData(typeof(PlayerRankData), "Rank") as PlayerRankData;
+    }
 
-        
+    public void AddRankInfo(string name, int score, float time)
+    {
+        rankData.playerDataList.Add(new PlayerData(name, time, score));
+        rankData.playerDataList.Sort((a, b) => a.time < b.time ? -1 : 1);
+
+        /*for (int i = rankData.playerDataList.Count-1; i >= 10; i++)
+        {
+            rankData.playerDataList.RemoveAt(i);
+        }
+*/
+        if (rankData.playerDataList.Count >= 10)
+        {
+            rankData.playerDataList.RemoveRange(10, rankData.playerDataList.Count - 10);
+        }
+
+        PlayerPrefsDataMgr.Instance.SaveData(rankData, "Rank");
     }
 
     public void OpenOrCloseMusic(bool isOpen)
@@ -63,4 +78,7 @@ public class GameDataManager
         //存储改变后的数据
         PlayerPrefsDataMgr.Instance.SaveData(settingData, "Music");
     }
+
+    public List<PlayerData> GetPlayerData()
+    { return rankData.playerDataList; }
 }
