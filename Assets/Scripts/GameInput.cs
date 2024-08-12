@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameInput : MonoBehaviour
 {
     public static GameInput Instance { get; private set; }
-    private PlayerInputActions inputActions;
+    public PlayerInputActions inputActions;
     private void Awake()
     {
         Instance = this;
@@ -20,6 +20,13 @@ public class GameInput : MonoBehaviour
     {
         Vector2 inputVector = inputActions.Player.Move.ReadValue<Vector2>();
         inputVector = inputVector.normalized;
+        return inputVector;
+    }
+    public float GetRotateValue()
+    {
+
+        float inputVector = inputActions.Player.Rotate.ReadValue<float>();
+
         return inputVector;
     }
 }
