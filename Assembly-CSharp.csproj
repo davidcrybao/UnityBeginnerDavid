@@ -64,6 +64,7 @@
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\MoveTest2.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\Test3.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\TankShooterRotate.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Weapon\Weapon.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUIToggle.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\TransformExtensions.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\MoveTest1.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\GameData\GameDataManager.cs" />
     <Compile Include="Assets\Scripts\StartScene\UI\StartPanelControl.cs" />
     <Compile Include="Assets\Scripts\GameData\SettingData.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Weapon\Bullet.cs" />
     <Compile Include="Assets\Scripts\UIControl\SettingPanel.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\Test.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\RTest4.cs" />
@@ -100,10 +102,9 @@
     <Compile Include="Assets\UnityLearn Practice\Scripts\TransformTest1.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\Test4.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\CreatObject.cs" />
-    <Compile Include="Assets\Scripts\Weapon\Bullet.cs" />
     <Compile Include="Assets\Scripts\UIControl\BasePanel.cs" />
-    <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUITexture.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Weapon\WeaponPickUp.cs" />
     <Compile Include="Assets\Scripts\GameScene\PlayerTank.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\Lesson59碰撞练习.cs" />
     <Compile Include="Assets\Scripts\GameScene\UI\GameUIPanel.cs" />

@@ -12,6 +12,7 @@ public class PlayerTank : TankBase
     [SerializeField] private Weapon currentWeapon;
 
     [SerializeField] private GameInput gameInput;
+    [SerializeField] private Transform weaponPoint;
     private void Start()
     {
         gameInput.inputActions.Player.Fire.performed += Fire_performed;
@@ -60,6 +61,14 @@ public class PlayerTank : TankBase
     {
         currentWeapon?.Fire(this);
         OnPlayerFire?.Invoke();
+    }
+    public void SetWeapon(Weapon weapon)
+    {
+        this.currentWeapon = weapon; //实际上这里是错误的使用,currentWeapon和下面的代码一点关系都没用 之前出错的地方
+        currentWeapon = Instantiate(weapon, weaponPoint.position, weaponPoint.rotation, weaponPoint);
+
+        //GameObject instantiatedWeapon = Instantiate(weapon.gameObject, weaponPoint.position, weaponPoint.rotation, weaponPoint);
+
     }
    
 }
