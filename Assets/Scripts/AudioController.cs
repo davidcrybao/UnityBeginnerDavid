@@ -13,8 +13,15 @@ public class AudioController : MonoBehaviour
         audioSource=gameObject.GetComponent<AudioSource>();
             instance = this;
     }
+    /// <summary>
+    /// 在start启用这个,awake有些组件可能没初始化完毕
+    /// </summary>
+    private void Start()
+    {
+        ChangeValue(GameDataManager.Instance.GetSettingData().musicValue);
+        OpenMusic(GameDataManager.Instance.GetSettingData().isBGMOpen);
+    }
 
-    
     public void ChangeValue(float value)
     {
 

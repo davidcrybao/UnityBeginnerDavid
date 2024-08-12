@@ -10,9 +10,10 @@ public class SettingPanel : BasePanel<SettingPanel>
     [SerializeField] private CustomGUIToggle musicEffectsToggle;
     [SerializeField] private CustomGUISlider musicValue;
     [SerializeField] private CustomGUISlider musicEffectsValue;
+
+    [SerializeField] private bool isGameScene = false;
     private new void Awake()
     {
-     
         base.Awake(); 
         print("dedesd");
     }
@@ -25,7 +26,7 @@ public class SettingPanel : BasePanel<SettingPanel>
         musicValue.changeValue += MusicValue_changeValue;
         musicEffectsValue.changeValue += MusicEffectsValue_changeValue;
         HideOrShow(false);
-        UpdatePanelInfo();
+ 
     }
 
     private void MusicEffectsValue_changeValue(float arg0)
@@ -68,7 +69,17 @@ public class SettingPanel : BasePanel<SettingPanel>
 
     private void QuitButton_clickEvent()
     {
-        StartPanelControl.Instance.HideOrShow(true);
         HideOrShow(false);
+        if (!isGameScene)
+        {
+            StartPanelControl.Instance.HideOrShow(true);
+        }
+        else
+        {
+            GameUIPanel.Instance.HideOrShow(true);
+            Time.timeScale = 1;
+        }
+
+     
     }
 }
