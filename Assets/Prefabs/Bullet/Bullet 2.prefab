@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3168216290412507505}
   - component: {fileID: 8662864576714601684}
   - component: {fileID: 6745871646025137022}
+  - component: {fileID: -7944954318168232369}
+  - component: {fileID: 1839989312226114657}
   m_Layer: 0
   m_Name: Bullet 2
   m_TagString: Untagged
@@ -45,7 +47,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3761e88a79f11e8449f03be746a08dbb, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -145,6 +147,54 @@ MonoBehaviour:
   bulletSpeed: 5
   hitEffect: {fileID: 167962, guid: 5e5f86cf0960f9c4498d6793ef7679dd, type: 3}
   fatherObj: {fileID: 0}
+--- !u!65 &-7944954318168232369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345863874825397649}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1839989312226114657
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345863874825397649}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &3647558671405312048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,11 +213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466698, guid: 1a189d870e00aae499406a6440509d01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466698, guid: 1a189d870e00aae499406a6440509d01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.87
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466698, guid: 1a189d870e00aae499406a6440509d01, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,7 +247,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 13570478, guid: 1a189d870e00aae499406a6440509d01, type: 3}
+      propertyPath: m_Radius
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 19960580, guid: 1a189d870e00aae499406a6440509d01, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 13570478, guid: 1a189d870e00aae499406a6440509d01, type: 3}
+    - {fileID: 5493320, guid: 1a189d870e00aae499406a6440509d01, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

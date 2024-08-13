@@ -21,13 +21,22 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cube"))
+        Debug.Log("和墙壁碰撞");
+
+        if (other.tag=="Cube")
         {
+            Debug.Log("特效和声音");
+        }
+        if (other.gameObject.CompareTag("Cube"))
+        {
+            Debug.Log("特效和声音");
             GameObject eff = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
             AudioSource audioSource= GetComponent<AudioSource>();
-            audioSource.mute = GameDataManager.Instance.GetSettingData().isSMusicEffectsOpen;
+            audioSource.mute = !GameDataManager.Instance.GetSettingData().isSMusicEffectsOpen;
             audioSource.volume= GameDataManager.Instance.GetSettingData().MusicEffectsValue;
+            audioSource.Play();
+            Destroy(this.gameObject,2);
         }
-        Destroy(this.gameObject);
+      
     }
 }

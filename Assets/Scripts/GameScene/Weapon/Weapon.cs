@@ -13,9 +13,6 @@ public class Weapon : MonoBehaviour
         for (int i = 0; i < firePosition.Length; i++)
         {
             GameObject obj = Instantiate(bulletPrefab.gameObject, firePosition[i].position, firePosition[i].rotation);
-            Debug.Log("Weapon Position"+transform.position);
-            Debug.Log(firePosition[i].position);
-            Debug.Log("TestLocalPosition"+firePosition[i].localPosition);
             Bullet bullet = obj.GetComponent<Bullet>();
             bullet.SetFather(shooterObj);
         }

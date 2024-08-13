@@ -9,7 +9,7 @@ public class WeaponPickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerTank>().SetWeapon(weapons[Random.Range(0,3)]);
+            other.GetComponent<PlayerTank>().SetWeapon(weapons[Random.Range(0,weapons.Length)]);
 
             Destroy(this.gameObject);
         }

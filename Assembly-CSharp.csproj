@@ -77,6 +77,7 @@
     <Compile Include="Assets\UnityLearn Practice\Scripts\DestroyDetect.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUIInput.cs" />
     <Compile Include="Assets\Scripts\GameData\GameDataManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene\OtherPickups.cs" />
     <Compile Include="Assets\Scripts\StartScene\UI\StartPanelControl.cs" />
     <Compile Include="Assets\Scripts\GameData\SettingData.cs" />
     <Compile Include="Assets\Scripts\GameScene\Weapon\Bullet.cs" />
@@ -104,6 +105,8 @@
     <Compile Include="Assets\UnityLearn Practice\Scripts\CreatObject.cs" />
     <Compile Include="Assets\Scripts\UIControl\BasePanel.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUITexture.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Tank\TowerTank.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Tank\EnemyTank.cs" />
     <Compile Include="Assets\Scripts\GameScene\Weapon\WeaponPickUp.cs" />
     <Compile Include="Assets\Scripts\GameScene\PlayerTank.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\Lesson59碰撞练习.cs" />

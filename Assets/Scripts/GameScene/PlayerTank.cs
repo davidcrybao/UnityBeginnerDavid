@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerTank : TankBase
 {
     public event UnityAction OnPlayerFire;
+
     public event UnityAction OnPlayerTakeDamage;
+
     public event UnityAction OnPlayerLose;
+
     [SerializeField] private Weapon currentWeapon;
 
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform weaponPoint;
+
     private void Start()
     {
         gameInput.inputActions.Player.Fire.performed += Fire_performed;
@@ -20,10 +21,7 @@ public class PlayerTank : TankBase
 
     private void Fire_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        Debug.Log("Genral test");
         Fire();
-
-
     }
 
     private void Update()
@@ -36,15 +34,15 @@ public class PlayerTank : TankBase
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
         Vector3 moveDirection = new Vector3(inputVector.x, 0.0f, inputVector.y);
-        transform.Translate(moveDirection * Time.deltaTime*moveSpeed,Space.Self); 
-
+        transform.Translate(moveDirection * Time.deltaTime * moveSpeed, Space.Self);
     }
+
     public void Rotate()
     {
         float inputFloat = gameInput.GetRotateValue();
-        this.transform.Rotate(inputFloat *Vector3.up* bodyRotateSpeed * Time.deltaTime);
-
+        this.transform.Rotate(inputFloat * Vector3.up * bodyRotateSpeed * Time.deltaTime);
     }
+
     public override void OnDamaged(TankBase other)
     {
         base.OnDamaged(other);
@@ -57,18 +55,48 @@ public class PlayerTank : TankBase
         base.OnDeath();
         OnPlayerLose?.Invoke();
     }
+
     public override void Fire()
     {
         currentWeapon?.Fire(this);
         OnPlayerFire?.Invoke();
     }
+
+
+    #region 属性奖励
+    public void UpdateHealth(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+    public void UpdateMaxHealth(int amount)
+    {
+        maxHealth += amount;
+    }
+
+    public void UpdateAttack(int amount)
+    {
+
+        attack += amount;
+    }
+    public void UpdateDefence(int amount)
+    {
+
+        defence += amount;
+    }
+    public void UpdateSpeed(int amount)
+    { 
+    
+        moveSpeed+= amount;
+    }
+
+    #endregion
     public void SetWeapon(Weapon weapon)
     {
-        this.currentWeapon = weapon; //实际上这里是错误的使用,currentWeapon和下面的代码一点关系都没用 之前出错的地方
         currentWeapon = Instantiate(weapon, weaponPoint.position, weaponPoint.rotation, weaponPoint);
-
-        //GameObject instantiatedWeapon = Instantiate(weapon.gameObject, weaponPoint.position, weaponPoint.rotation, weaponPoint);
-
     }
-   
 }
