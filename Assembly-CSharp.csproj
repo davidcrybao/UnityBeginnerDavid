@@ -64,6 +64,7 @@
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\MoveTest2.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\Test3.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\TankShooterRotate.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Tank\BaseTank.cs" />
     <Compile Include="Assets\Scripts\GameScene\Weapon\Weapon.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUIToggle.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\TransformExtensions.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Base\CustomGUIPos.cs" />
     <Compile Include="Assets\Scripts\GameScene\UI\GameExitPanel.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
-    <Compile Include="Assets\Scripts\GameScene\TankBase.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\TankMovement.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\TankBScript.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\CanldeVisual.cs" />
@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\GameInput.cs" />
     <Compile Include="Assets\Scripts\StartScene\UI\RankPanelControl.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\TransformTest1.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Tank\PlayerTank.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\1-8\Test4.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\CreatObject.cs" />
     <Compile Include="Assets\Scripts\UIControl\BasePanel.cs" />
@@ -108,7 +109,6 @@
     <Compile Include="Assets\Scripts\GameScene\Tank\TowerTank.cs" />
     <Compile Include="Assets\Scripts\GameScene\Tank\EnemyTank.cs" />
     <Compile Include="Assets\Scripts\GameScene\Weapon\WeaponPickUp.cs" />
-    <Compile Include="Assets\Scripts\GameScene\PlayerTank.cs" />
     <Compile Include="Assets\UnityLearn Practice\Scripts\Lesson59碰撞练习.cs" />
     <Compile Include="Assets\Scripts\GameScene\UI\GameUIPanel.cs" />
     <Compile Include="Assets\Scripts\实践小项目\CustomGUI\Control\CustomGUISlider.cs" />

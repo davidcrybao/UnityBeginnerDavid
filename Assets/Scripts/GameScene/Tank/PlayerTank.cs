@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerTank : TankBase
+public class PlayerTank : BaseTank
 {
     public event UnityAction OnPlayerFire;
 
@@ -43,10 +43,11 @@ public class PlayerTank : TankBase
         this.transform.Rotate(inputFloat * Vector3.up * bodyRotateSpeed * Time.deltaTime);
     }
 
-    public override void OnDamaged(TankBase other)
+    public override void OnDamaged(BaseTank other)
     {
         base.OnDamaged(other);
         GameUIPanel.Instance.UpdateHP(maxHealth, currentHealth);
+        //在这里可以写玩家HP=0的时候的逻辑 显示失败界面UI,暂停游戏等
         OnPlayerTakeDamage?.Invoke();
     }
 

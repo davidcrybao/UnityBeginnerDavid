@@ -6,11 +6,6 @@ public class StartSceneRotate : MonoBehaviour
 {
     [SerializeField] private Transform[] transforms;
     [SerializeField]private int rotateSpeed = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -19,7 +14,7 @@ public class StartSceneRotate : MonoBehaviour
     }
     private void Rotate()
     {
-        if (transforms.Length==0)
+        if (transforms.Length==0||transforms==null)
         {
             return;
         }

@@ -6,36 +6,46 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private int bulletSpeed = 5;
     [SerializeField] private GameObject hitEffect;
-    public TankBase fatherObj;
+    public BaseTank fatherObj;
 
-
+    private AudioSource audio;
+    private void Awake()
+    {
+        audio= GetComponent<AudioSource>();
+    }
     void Update()
     {
         transform.Translate(bulletSpeed * Vector3.forward * Time.deltaTime);
     }
 
-    public void SetFather(TankBase tank)
+    public void SetFather(BaseTank tank)
     {
         fatherObj = tank;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("和墙壁碰撞");
-
-        if (other.tag=="Cube")
-        {
-            Debug.Log("特效和声音");
-        }
         if (other.gameObject.CompareTag("Cube"))
         {
-            Debug.Log("特效和声音");
             GameObject eff = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
-            AudioSource audioSource= GetComponent<AudioSource>();
-            audioSource.mute = !GameDataManager.Instance.GetSettingData().isSMusicEffectsOpen;
-            audioSource.volume= GameDataManager.Instance.GetSettingData().MusicEffectsValue;
-            audioSource.Play();
+            audio.mute = !GameDataManager.Instance.GetSettingData().isSMusicEffectsOpen;
+            audio.volume= GameDataManager.Instance.GetSettingData().MusicEffectsValue;
+            audio.Play();
             Destroy(this.gameObject,2);
+            Destroy(eff, 2);
+        }
+
+        BaseTank tank;
+        if (other.TryGetComponent<BaseTank>(out tank))
+        {
+            if (tank == fatherObj|| fatherObj.CompareTag(tank.tag)) return;
+            tank.OnDamaged(fatherObj);
+            GameObject eff = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+            audio.mute = !GameDataManager.Instance.GetSettingData().isSMusicEffectsOpen;
+            audio.volume = GameDataManager.Instance.GetSettingData().MusicEffectsValue;
+            audio.Play();
+            Destroy(this.gameObject, 2);
+            Destroy(eff, 2);
         }
       
     }

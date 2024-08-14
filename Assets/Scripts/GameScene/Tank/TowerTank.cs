@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerTank : MonoBehaviour
+public class TowerTank : BaseTank
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float shootInterval;
+    private float timeCounter;
+    [SerializeField] private Weapon weapon;
+    public override void Fire()
     {
-        
+        weapon.Fire(this);
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        timeCounter += Time.deltaTime;
+        if (timeCounter >shootInterval)
+        {
+            timeCounter = 0;
+            Fire();
+        }
     }
 }

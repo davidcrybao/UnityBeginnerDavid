@@ -12,7 +12,7 @@ public enum PickupType
 public class OtherPickups : MonoBehaviour
 {
     [SerializeField] private PickupType pickupType;
-
+    [SerializeField] private int rewardValue=1;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -21,16 +21,16 @@ public class OtherPickups : MonoBehaviour
             switch (pickupType)
             {
                 case PickupType.health:
-                    player.UpdateHealth(5);
+                    player.UpdateHealth(rewardValue);
                     break;
                 case PickupType.attack:
-                    player.UpdateAttack(1);
+                    player.UpdateAttack(rewardValue);
                     break;
                 case PickupType.defence:
-                    player.UpdateDefence(1);
+                    player.UpdateDefence(rewardValue);
                     break;
                 case PickupType.speed:
-                    player.UpdateSpeed(2);
+                    player.UpdateSpeed(rewardValue);
                     break;
             }
 

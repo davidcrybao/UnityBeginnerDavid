@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private Transform[] firePosition;
 
-    public void Fire(TankBase shooterObj)
+    public void Fire(BaseTank shooterObj)
     {
         for (int i = 0; i < firePosition.Length; i++)
         {

@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class TankBase : MonoBehaviour
+public abstract class BaseTank : MonoBehaviour
 {
-    [SerializeField] protected int attack;
-    [SerializeField] protected int defence;
-    [SerializeField] protected int maxHealth;
-    [SerializeField] protected int currentHealth;
-    [SerializeField] protected int moveSpeed;
-    [SerializeField] protected int bodyRotateSpeed;
-    [SerializeField] protected int headRotateSpeed;
+    [SerializeField] protected int attack=1;
+    [SerializeField] protected int defence=1;
+    [SerializeField] protected int maxHealth=5;
+    [SerializeField] protected int currentHealth=5;
+    [SerializeField] protected int moveSpeed=2;
+    [SerializeField] protected int bodyRotateSpeed=2;
+    [SerializeField] protected int headRotateSpeed=2;
 
     [SerializeField] protected GameObject DestroyedEffectPreafab;
     public abstract void Fire();
@@ -30,7 +30,7 @@ public abstract class TankBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void OnDamaged(TankBase other)
+    public virtual void OnDamaged(BaseTank other)
     {
         int damage = other.attack - defence;
         if (damage > 0) {
