@@ -456,8 +456,9 @@ Vector3 worldDirection = transform.TransformDirection(localDirection);
 
 ## 0.49摄像机相关知识
 
-![[摄像机参数说明2.png]]
-![[摄像机参数说明.png]]
+![](Unity入门总结MD内容/Pictures/摄像机参数说明.png)
+![](Unity入门总结MD内容/Pictures/摄像机参数说明2.png)
+
 
 ## 0.53光源
 
